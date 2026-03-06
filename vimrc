@@ -255,6 +255,9 @@ Plug 'tpope/vim-rsi'
 
 " File tree
 Plug 'preservim/nerdtree'
+
+" Testing
+Plug 'vim-test/vim-test'
 call plug#end()
 
 
@@ -267,6 +270,13 @@ colorscheme catppuccin_mocha
 let g:slime_target="tmux"
 let g:slime_default_config = {"socket_name": get(split($TMUX, ","), 0), "target_pane": ":.2"}
 let g:slime_bracketed_paste = 1
+
+" Bindings for testing
+nmap <silent> <leader>tt :TestNearest<CR>
+nmap <silent> <leader>tT :TestFile<CR>
+nmap <silent> <leader>ta :TestSuite<CR>
+nmap <silent> <leader>tl :TestLast<CR>
+nmap <silent> <leader>tg :TestVisit<CR>
 
 " NERDTree config
 nnoremap <C-t> :NERDTree<CR>
@@ -285,6 +295,7 @@ nnoremap <silent> [ :<c-u>WhichKey  '['<CR>
 let g:which_key_map =  {}
 let g:which_key_map.s = { 'name' : '[S]earch' }
 let g:which_key_map.h = { 'name' : 'Git [H]unk' }
+let g:which_key_map.t = { 'name' : '[T]est' }
 
 " Autoformatting
 au BufWrite * :Autoformat
