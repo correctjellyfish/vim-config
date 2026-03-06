@@ -253,7 +253,7 @@ Plug 'jpalardy/vim-slime'
 " Readline bindings for vim
 Plug 'tpope/vim-rsi'
 
-" File tree, because sometimes I need to see the structure
+" File tree
 Plug 'preservim/nerdtree'
 call plug#end()
 
