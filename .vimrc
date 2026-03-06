@@ -277,6 +277,9 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 call which_key#register('<Space>', "g:which_key_map")
 nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
 nnoremap <silent> <localleader> :<c-u>WhichKey  '<Space>'<CR>
+nnoremap <silent> g :<c-u>WhichKey  'g'<CR>
+nnoremap <silent> ] :<c-u>WhichKey  ']'<CR>
+nnoremap <silent> [ :<c-u>WhichKey  '['<CR>
 
 " Document existing key chains
 let g:which_key_map =  {}
