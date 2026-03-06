@@ -258,6 +258,9 @@ Plug 'preservim/nerdtree'
 
 " Testing
 Plug 'vim-test/vim-test'
+
+" Undotree
+Plug 'mbbill/undotree'
 call plug#end()
 
 
@@ -277,6 +280,9 @@ nmap <silent> <leader>tT :TestFile<CR>
 nmap <silent> <leader>ta :TestSuite<CR>
 nmap <silent> <leader>tl :TestLast<CR>
 nmap <silent> <leader>tg :TestVisit<CR>
+
+" Undo-tree config
+nnoremap <silent> <leader>u :UndotreeToggle<CR>
 
 " NERDTree config
 nnoremap <C-t> :NERDTree<CR>
