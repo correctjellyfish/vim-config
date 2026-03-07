@@ -10,11 +10,10 @@ let g:floaterm_keymap_prev   = '<F8>'
 let g:floaterm_keymap_next   = '<F9>'
 let g:floaterm_keymap_toggle = '<C-\>'
 
-nmap <leader>T = :FloatermNew<CR>
-let g:which_key_map.T = '[T]erminal'
+nmap <leader>Tt = :FloatermNew<CR>
+let g:which_key_map.T.n = '[N]ew'
 
-" Open vifm to edit file directories
-command! Vifm FloatermNew vifm
-
-" Create a keybind for the vifm
-nmap <leader>F :Vifm<CR>
+" If fish is available, use it as the shell
+if executable('fish')
+  let g:floaterm_shell = 'fish'
+endif
