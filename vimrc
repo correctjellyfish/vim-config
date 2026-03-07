@@ -266,6 +266,12 @@ Plug 'mbbill/undotree'
 " For writing
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
+
+" Expand region
+Plug 'terryma/vim-expand-region'
+
+" Move region
+Plug 'matze/vim-move'
 call plug#end()
 
 
@@ -288,6 +294,9 @@ nmap <silent> <leader>tg :TestVisit<CR>
 
 " Undo-tree config
 nnoremap <silent> <leader>u :UndotreeToggle<CR>
+
+" Vim-move config
+let g:move_key_modifier_visualmode = 'S'
 
 " Goyo setup
 nmap <silent> <leader>ws :Goyo<CR>
