@@ -224,7 +224,7 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 " Helpful plugin for working with paired delimeters
 Plug 'tpope/vim-surround'
 
-" Autoinsert paired delimeter
+" Autoinsert paired delimiter
 Plug 'Raimondi/delimitMate'
 
 " Movement
