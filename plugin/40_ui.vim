@@ -16,6 +16,7 @@ nnoremap <silent> g :<c-u>WhichKey  'g'<CR>
 nnoremap <silent> ] :<c-u>WhichKey  ']'<CR>
 nnoremap <silent> [ :<c-u>WhichKey  '['<CR>
 
+
 " Document existing key chains
 let g:which_key_map =  {}
 let g:which_key_map.s = { 'name' : '[S]earch' }
