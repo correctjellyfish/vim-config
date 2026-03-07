@@ -76,6 +76,7 @@ set breakindent
 
 " Fold using indent
 set foldmethod=indent
+set foldlevel=99
 
 
 " Save undo history
@@ -272,6 +273,9 @@ Plug 'terryma/vim-expand-region'
 
 " Move region
 Plug 'matze/vim-move'
+
+" Linting
+" Plug 'dense-analysis/ale'
 call plug#end()
 
 
@@ -377,6 +381,7 @@ let g:which_key_map['/'] = '[/] Fuzzily search in current buffer'
 " you are trying to install LSP for.
 " For example, if you want LSP server for C/C++, type
 " `:LspInstallServer clangd` in a C/C++ buffer.
+let g:lsp_settings_filetype_python = ['ty', 'ruff']
 
 " Performance related settings, requires Vim 8.2+
 let g:lsp_use_native_client = 1
