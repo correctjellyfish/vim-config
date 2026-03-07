@@ -213,6 +213,7 @@ Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
 " Colorscheme
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+Plug 'chriskempson/base16-vim'
 
 " Set airline as statusline
 Plug 'vim-airline/vim-airline'
@@ -261,6 +262,10 @@ Plug 'vim-test/vim-test'
 
 " Undotree
 Plug 'mbbill/undotree'
+
+" For writing
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 call plug#end()
 
 
@@ -284,12 +289,44 @@ nmap <silent> <leader>tg :TestVisit<CR>
 " Undo-tree config
 nnoremap <silent> <leader>u :UndotreeToggle<CR>
 
+" Goyo setup
+nmap <silent> <leader>ws :Goyo<CR>
+nmap <silent> <leader>we :Goyo!<CR>
+" Run on entering Goyo
+function! s:goyo_enter()
+  if executable('tmux') && strlen($TMUX)
+    silent !tmux set status off
+    silent !tmux list-panes -F '\#F' | grep -q Z || tmux resize-pane -Z
+  endif
+  set noshowmode
+  set noshowcmd
+  set scrolloff=999
+  Limelight
+  colorscheme base16-grayscale-light
+endfunction
+
+function! s:goyo_leave()
+  if executable('tmux') && strlen($TMUX)
+    silent !tmux set status on
+    silent !tmux list-panes -F '\#F' | grep -q Z && tmux resize-pane -Z
+  endif
+  set showmode
+  set showcmd
+  set scrolloff=5
+  Limelight!
+  colorscheme catppuccin_mocha
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
 " NERDTree config
 nnoremap <C-t> :NERDTree<CR>
 " Exit Vim if NERDTree is the only window remaining in the only tab.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | call feedkeys(":quit\<CR>:\<BS>") | endif
 
 " [[ Configure vim-which-key ]]
+let g:which_key_fallback_to_native_key=1
 call which_key#register('<Space>', "g:which_key_map")
 nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
 nnoremap <silent> <localleader> :<c-u>WhichKey  '<Space>'<CR>
