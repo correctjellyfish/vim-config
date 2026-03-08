@@ -10,7 +10,7 @@ let g:floaterm_keymap_prev   = '<F8>'
 let g:floaterm_keymap_next   = '<F9>'
 let g:floaterm_keymap_toggle = '<C-\>'
 
-nmap <leader>Tt = :FloatermNew<CR>
+nmap <leader>Tn = :FloatermNew<CR>
 let g:which_key_map.T.n = '[N]ew'
 
 " If fish is available, use it as the shell

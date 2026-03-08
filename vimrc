@@ -112,19 +112,26 @@ Plug 'junegunn/fzf.vim'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 " Autoinsert paired delimiter
 Plug 'Raimondi/delimitMate'
-" Movement
-Plug 'justinmk/vim-sneak'
-" File tree
-Plug 'preservim/nerdtree'
-Plug 'vifm/vifm.vim'
-" Cleanup trailing whitespace
-Plug 'axelf4/vim-strip-trailing-whitespace'
 " Undotree
 Plug 'mbbill/undotree'
 " Expand region
 Plug 'terryma/vim-expand-region'
 " Move region
 Plug 'matze/vim-move'
+" Better yank/paste
+Plug 'svermeulen/vim-yoink'
+" Various small improvements
+Plug 'girishji/vimbits'
+" Highlight trailing whitespace
+Plug 'ntpeters/vim-better-whitespace'
+
+" -----
+" Files
+" -----
+" File tree
+Plug 'preservim/nerdtree'
+" File explorer/editor
+Plug 'habamax/vim-dir'
 
 " --
 " UI

@@ -23,6 +23,8 @@ nnoremap <silent> [ :<c-u>WhichKey  '['<CR>
 let g:which_key_map =  {}
 let g:which_key_map.s = { 'name' : '[S]earch' }
 let g:which_key_map.h = { 'name' : 'Git [H]unk' }
+let g:which_key_map.g = { 'name' : '[G]it (fugitive)' }
 let g:which_key_map.t = { 'name' : '[T]est/[T]ags' }
 let g:which_key_map.T = { 'name' : '[T]erminal' }
-let g:which_key_map.v = { 'name' : '[V]ifm' }
+let g:which_key_map.p = { 'name' : '[P]aste' }
+let g:which_key_map.o = { 'name' : '[W]riting/[W]hitespace' }

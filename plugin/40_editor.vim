@@ -27,13 +27,42 @@ nnoremap <C-t> :NERDTree<CR>
 " Exit Vim if NERDTree is the only window remaining in the only tab.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | call feedkeys(":quit\<CR>:\<BS>") | endif
 
-" Vifm config
-nnoremap - :EditVifm<CR>
-nmap <leader>vv :VsplitVifm<CR>
-let g:which_key_map.v.v = '[V]ertical split'
-nmap <leader>vp :PeditVifm<CR>
-let g:which_key_map.v.p = '[P]review window'
-nmap <leader>vd :DiffVifm<CR>
-let g:which_key_map.v.d = '[D]iff'
-nmap <leader>vt :TabVifm<CR>
-let g:which_key_map.v.t = '[T]ab'
+" Vim-dir file explorer
+nnoremap - :Dir<CR>
+
+" Improved yank/paste
+let g:which_key_map.p.p = '[N]ext'
+let g:which_key_map.p.n = '[P]revious'
+nmap <leader>pn <plug>(YoinkPostPasteSwapBack)
+nmap <leader>pp <plug>(YoinkPostPasteSwapForward)
+
+nmap p <plug>(YoinkPaste_p)
+nmap P <plug>(YoinkPaste_P)
+
+" Also replace the default gp with yoink paste so we can toggle paste in this case too
+nmap gp <plug>(YoinkPaste_gp)
+nmap gP <plug>(YoinkPaste_gP)
+
+" Toggle whether pase if formatted
+nmap <c-=> <plug>(YoinkPostPasteToggleFormat)
+
+" Preserve position on yanking
+nmap y <plug>(YoinkYankPreserveCursorPosition)
+xmap y <plug>(YoinkYankPreserveCursorPosition)
+
+" Movement (Easyjump)
+let g:easyjump_two_chars = 1
+
+" Strip whitespace
+nnoremap <leader>ww :StripWhitespace<CR>
+let g:which_key_map.w.w = 'Strip [W]hitespace'
+
+" Some git commands
+nnoremap <leader>gs :Git<CR>
+let g:which_key_map.g.s = { 'name' : '[S]tatus' }
+nnoremap <leader>gb :Git blame<CR>
+let g:which_key_map.g.b = { 'name' : '[B]lame' }
+nnoremap <leader>gd :Git difftool<CR>
+let g:which_key_map.g.d = { 'name' : '[D]iff' }
+nnoremap <leader>gm :Git mergetool<CR>
+let g:which_key_map.g.d = { 'name' : '[M]erge' }
