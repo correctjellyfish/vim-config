@@ -146,6 +146,8 @@ Plug 'vim-airline/vim-airline'
 " For writing
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
+" Start screen
+Plug 'mhinz/vim-startify'
 
 " ---------
 " Languages

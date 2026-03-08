@@ -68,3 +68,7 @@ nnoremap <leader>gm :Git mergetool<CR>
 let g:which_key_map.g.d = { 'name' : '[M]erge' }
 nnoremap <leader>ga :Gwrite<CR>
 let g:which_key_map.g.d = { 'name' : '[A]dd' }
+
+" Allow repeated indent/unindent
+vnoremap > >gv
+vnoremap < <gv
