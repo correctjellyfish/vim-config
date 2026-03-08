@@ -66,3 +66,5 @@ nnoremap <leader>gd :Git difftool<CR>
 let g:which_key_map.g.d = { 'name' : '[D]iff' }
 nnoremap <leader>gm :Git mergetool<CR>
 let g:which_key_map.g.d = { 'name' : '[M]erge' }
+nnoremap <leader>ga :Gwrite<CR>
+let g:which_key_map.g.d = { 'name' : '[A]dd' }
