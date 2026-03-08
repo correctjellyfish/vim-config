@@ -79,7 +79,6 @@ set scrolloff=5
 " instead raise a dialog asking if you wish to save the current file(s)
 " See `:help 'confirm'`
 set confirm
-
 " Install `vim-plug` plugin manager
 "    See https://github.com/junegunn/vim-plug/ for more info
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
@@ -163,6 +162,8 @@ Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'vim-autoformat/vim-autoformat'
 " Testing
 Plug 'vim-test/vim-test'
+" Debugging
+Plug 'puremourning/vimspector'
 
 
 " --------

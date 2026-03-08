@@ -31,10 +31,10 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 nnoremap - :Dir<CR>
 
 " Improved yank/paste
-let g:which_key_map.p.p = '[N]ext'
-let g:which_key_map.p.n = '[P]revious'
-nmap <leader>pn <plug>(YoinkPostPasteSwapBack)
-nmap <leader>pp <plug>(YoinkPostPasteSwapForward)
+let g:which_key_map.p.n = '[N]ext'
+let g:which_key_map.p.p = '[P]revious'
+nmap <leader>pp <plug>(YoinkPostPasteSwapBack)
+nmap <leader>pn <plug>(YoinkPostPasteSwapForward)
 
 nmap p <plug>(YoinkPaste_p)
 nmap P <plug>(YoinkPaste_P)
@@ -49,9 +49,6 @@ nmap <c-=> <plug>(YoinkPostPasteToggleFormat)
 " Preserve position on yanking
 nmap y <plug>(YoinkYankPreserveCursorPosition)
 xmap y <plug>(YoinkYankPreserveCursorPosition)
-
-" Movement (Easyjump)
-let g:easyjump_two_chars = 1
 
 " Strip whitespace
 nnoremap <leader>ww :StripWhitespace<CR>
