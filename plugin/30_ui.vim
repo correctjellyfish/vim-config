@@ -29,3 +29,4 @@ let g:which_key_map.T = { 'name' : '[T]erminal' }
 let g:which_key_map.p = { 'name' : '[P]aste' }
 let g:which_key_map.w = { 'name' : '[W]riting/[W]hitespace' }
 let g:which_key_map.d = { 'name' : '[D]ebug' }
+let g:which_key_map.m = { 'name' : '[M]acro' }

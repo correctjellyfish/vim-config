@@ -17,6 +17,9 @@ set history=10000 incsearch
 set nojoinspaces laststatus=2 ruler
 set showcmd smarttab nostartofline
 set switchbuf=uselast wildmenu "wildoptions=pum,tagfile
+" Change cursor style depending on mode
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
 
 " [[ Settings other options ]]
 " See `:help :set`
@@ -26,6 +29,11 @@ set switchbuf=uselast wildmenu "wildoptions=pum,tagfile
 " Make line numbers default
 set number
 set relativenumber
+
+" Disable bells
+set noerrorbells
+set novisualbell
+set t_vb=
 
 " Enable mouse mode, can be useful for resizing splits for example!
 set mouse=a
@@ -70,7 +78,7 @@ set listchars=tab:»\ ,trail:·,nbsp:␣
 "set listchars=tab:>\ ,trail:-,nbsp:+
 
 " Show which line your cursor is on
-set cursorline
+set nocursorline
 
 " Minimal number of screen lines to keep above and below the cursor
 set scrolloff=5
@@ -79,6 +87,26 @@ set scrolloff=5
 " instead raise a dialog asking if you wish to save the current file(s)
 " See `:help 'confirm'`
 set confirm
+
+" When saving VIMRC source it (useful for adding plugins)
+autocmd BufWritePost $MYVIMRC source $MYVIMRC
+
+" Disable some default plugins
+let g:loaded_2html_plugin = 1
+let g:loaded_getscriptPlugin = 1
+let g:loaded_gzip = 1
+let g:loaded_logipat = 1
+let g:loaded_netrwPlugin = 1
+let g:loaded_rrhelper = 1
+let g:loaded_spellfile_plugin = 1
+let g:loaded_tarPlugin = 1
+let g:loaded_vimballPlugin = 1
+let g:loaded_zipPlugin = 1
+
+" #######
+" Plugins
+" #######
+
 " Install `vim-plug` plugin manager
 "    See https://github.com/junegunn/vim-plug/ for more info
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
