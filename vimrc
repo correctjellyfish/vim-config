@@ -217,4 +217,6 @@ Plug 'preservim/tagbar'
 Plug 'airblade/vim-gitgutter'
 " Improved git integration
 Plug 'tpope/vim-fugitive'
+" Commit viewer
+Plug 'junegunn/gv.vim'
 call plug#end()
