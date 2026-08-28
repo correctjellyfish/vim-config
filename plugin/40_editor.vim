@@ -77,3 +77,8 @@ let g:which_key_map.m.e = '[E]dit'
 " Quickly add blank lines
 nnoremap [<space>  :<c-u>put! =repeat(nr2char(10), v:count1)<cr>'[
 nnoremap ]<space>  :<c-u>put =repeat(nr2char(10), v:count1)<cr>
+
+" Disable EasyJump from vimbits
+let g:vimbits_easyjump = 0
+" Enable next_s from sneak
+let g:sneak#s_next=1

@@ -8,6 +8,9 @@ let g:lsp_settings_filetype_python = ['ty', 'ruff']
 let g:lsp_use_native_client = 1
 let g:lsp_semantic_enabled = 1
 
+" Disable Diagnostics (Moved to ALE)
+let g:lsp_diagnostics_enabled = 0
+
 function! s:on_lsp_buffer_enabled() abort
   setlocal omnifunc=lsp#complete
   if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
@@ -31,6 +34,7 @@ function! s:on_lsp_buffer_enabled() abort
   nnoremap <buffer> grD <plug>(lsp-declaration)
   nnoremap <buffer> grt <plug>(lsp-peek-type-definition)
   nnoremap <buffer> gW <plug>(lsp-workspace-symbol-search)
+
 
   " Formatting
   let g:lsp_format_sync_timeout = 1000

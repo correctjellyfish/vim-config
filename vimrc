@@ -150,9 +150,17 @@ Plug 'Raimondi/delimitMate'
 " Undotree
 Plug 'mbbill/undotree'
 " Expand region
+" + - Expand
+" _ - Shrink
 Plug 'terryma/vim-expand-region'
 " Move region
+" S-h - Move left
+" S-j - Move down
+" S-k - Move up
+" S-l - Move right
 Plug 'matze/vim-move'
+" Easy jumping to different locations on screen
+Plug 'justinmk/vim-sneak'
 " Better yank/paste
 Plug 'svermeulen/vim-yoink'
 " Various small improvements
@@ -224,6 +232,8 @@ Plug 'mhinz/vim-startify'
 " ---------
 " Enable LSP
 Plug 'prabirshrestha/vim-lsp'
+" Add ALE for diagnostics
+Plug 'dense-analysis/ale'
 " Install language servers and configure them for vim-lsp
 Plug 'mattn/vim-lsp-settings'
 " Autocompletion
