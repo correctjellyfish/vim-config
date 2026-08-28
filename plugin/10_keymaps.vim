@@ -14,12 +14,6 @@ tnoremap <Esc><Esc> <C-\><C-n>
 nnoremap <expr> <silent> k v:count == 0 ? 'gk' : 'k'
 nnoremap <expr> <silent> j v:count == 0 ? 'gj' : 'j'
 
-" TIP: Disable arrow keys in normal mode
-nnoremap <left> :echo "Use h to move!!"<CR>
-nnoremap <right> :echo "Use l to move!!"<CR>
-nnoremap <up> :echo "Use k to move!!"<CR>
-nnoremap <down> :echo "Use j to move!!"<CR>
-
 " Keybinds to make split navigation easier.
 "  Use CTRL+<hjkl> to switch between windows
 "
