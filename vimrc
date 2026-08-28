@@ -136,6 +136,14 @@ Plug 'tpope/vim-rsi'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 " Add multiple cursors for easy editing
+" Keymaps
+" Ctrl-N - Select works
+" Ctrl-up/down - Create cursors vertically
+" Shift-Arrow - Select one character
+" n/N - Next/previous occurence
+" [/] - Next/previous cursor
+" q - Skip over
+" Q - remove current
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 " Autoinsert paired delimiter
 Plug 'Raimondi/delimitMate'
@@ -158,6 +166,41 @@ Plug 'ntpeters/vim-better-whitespace'
 " File tree
 Plug 'preservim/nerdtree'
 " File explorer/editor
+" Keymaps
+" Navigation:
+" o - open
+" s - open in split
+" S - open in vertical split
+" t - open in tab
+" CTR-R - refresh
+" ]] - jump over directories
+" [[ - jump over directories reverse
+" gj - open quick jump menu
+" File Operations:
+" i - preview
+" x - toggle select
+" X - toggle select all
+" D/dd - delete
+" R/rr - rename
+" p - copy selected files into current directory
+" P - move selected files into current directory
+" A - open actions menu
+" cc - Create File
+" C - create directory
+" Bookmarks/History:
+" ~ - home directory
+" g1 to g0 - open numbered bookmark
+" Ctrl-A 1 to 0 - Set numbered bookmark
+" gb - open bookmarks jump menu
+" gh - open history jump menu
+" Sort:
+" g, - size
+" g. - time
+" g/ - name
+" Filter/View:
+" . - show/hide hidden
+" > - Widen
+" < - Shrink
 Plug 'habamax/vim-dir'
 
 " --
