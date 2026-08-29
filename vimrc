@@ -163,8 +163,8 @@ Plug 'matze/vim-move'
 Plug 'justinmk/vim-sneak'
 " Better yank/paste
 Plug 'svermeulen/vim-yoink'
-" Various small improvements
-Plug 'girishji/vimbits'
+" Highlight on yank
+Plug 'machakann/vim-highlightedyank'
 " Highlight trailing whitespace
 Plug 'ntpeters/vim-better-whitespace'
 
