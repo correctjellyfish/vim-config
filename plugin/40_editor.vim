@@ -17,8 +17,8 @@ nmap <leader>sg :Tags<CR>
 let g:which_key_map.s.g = '[S]earch by [G]rep'
 nmap <leader>s. :History<CR>
 let g:which_key_map.s['.'] = '[S]earch Recent Files ("." for repeat)'
-nmap <leader><leader> :Buffers<CR>
-let g:which_key_map[' '] = '[ ] Find existing buffers'
+nmap <leader>bb :Buffers<CR>
+let g:which_key_map.b.b = 'Find existing [B]uffers'
 nmap <leader>/ :BLines<CR>
 let g:which_key_map['/'] = '[/] Fuzzily search in current buffer'
 

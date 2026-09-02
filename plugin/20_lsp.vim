@@ -1,49 +1,84 @@
-" NOTE: Install new language server using `:LspInstallServer` in the filetype
-" you are trying to install LSP for.
-" For example, if you want LSP server for C/C++, type
-" `:LspInstallServer clangd` in a C/C++ buffer.
-let g:lsp_settings_filetype_python = ['ty', 'ruff']
+let lspOpts = #{autoHighlightDiags: v:true}
+autocmd User LspSetup call LspOptionsSet(lspOpts)
 
-" Performance related settings, requires Vim 8.2+
-let g:lsp_use_native_client = 1
-let g:lsp_semantic_enabled = 1
+let lspServers = []
+if executable('clangd')
+  call add(lspServers, #{
+        \   name: 'clang',
+        \   filetype: ['c', 'cpp'],
+        \   path: exepath('clangd'),
+        \   args: ['--background-index'],
+        \ })
+endif
+if executable('ty')
+  call add(lspServers,#{
+        \   name: 'ty',
+        \   filetype: 'python',
+        \   path: exepath('ty'),
+        \   args: ['server'],
+        \ })
+endif
+if executable('ruff')
+  call add(lspServers,#{
+        \   name: 'ruff',
+        \   filetype: 'python',
+        \   path: exepath('ruff'),
+        \   args: ['server'],
+        \ })
+endif
+if executable('gopls')
+  call add(lspServers,#{
+        \    name: 'golang',
+        \    filetype: ['go', 'gomod'],
+        \    path: exepath('gopls'),
+        \    args: ['serve'],
+        \    syncInit: v:true
+        \  })
+endif
+if executable('rust-analyzer')
+  call add(lspServers,#{
+        \    name: 'rustlang',
+        \    filetype: ['rust'],
+        \    path: exepath('rust-analyzer'),
+        \    args: [],
+        \    syncInit: v:true
+        \ })
+endif
 
-" Disable Diagnostics (Moved to ALE)
-let g:lsp_diagnostics_enabled = 0
 
-function! s:on_lsp_buffer_enabled() abort
-  setlocal omnifunc=lsp#complete
-  if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
+autocmd User LspSetup call LspAddServer(lspServers)
 
-  " Keymaps
-  " These keybindings are default in Neovim
-  nnoremap <buffer> [d <plug>(lsp-previous-diagnostic)
-  nnoremap <buffer> ]d <plug>(lsp-next-diagnostic)
-  " See `:help K` for why this keymap
-  nnoremap <buffer> K <plug>(lsp-hover)
-  nnoremap <buffer> grn <plug>(lsp-rename)
-  nnoremap <buffer> gra <plug>(lsp-code-action-float)
-  nnoremap <buffer> grr <plug>(lsp-references)
-  nnoremap <buffer> gri <plug>(lsp-implementation)
-  nnoremap <buffer> gO <plug>(lsp-document-symbol-search)
-  nnoremap <buffer> <C-s> <plug>(lsp-signature-help)
+" Keybinds
 
-  " Other useful functions
-  nnoremap <buffer> grd <plug>(lsp-definition)
-  " In C, this would take you to the header file
-  nnoremap <buffer> grD <plug>(lsp-declaration)
-  nnoremap <buffer> grt <plug>(lsp-peek-type-definition)
-  nnoremap <buffer> gW <plug>(lsp-workspace-symbol-search)
+" These keybindings are default in Neovim
+nnoremap <buffer> [d :LspDiag prev <CR>
+nnoremap <buffer> ]d :LspDiag next <CR>
+" See `:help K` for why this keymap
+nnoremap <buffer> K :LspHover <CR>
+nnoremap <buffer> grn :LspRename <CR>
+nnoremap <buffer> gra :LspCodeAction <CR>
+nnoremap <buffer> grr :LspPeekReferences <CR>
+nnoremap <buffer> gri :LspGotoImpl <CR>
+nnoremap <buffer> gO :LspDocumentSymbol <CR>
+nnoremap <buffer> <C-s> :LspShowSignature <CR>
+" Other useful functions
+nnoremap <buffer> grd :LspGotoDefinition <CR>
+" In C, this would take you to the header file
+nnoremap <buffer> grD :LspGotoDeclaration <CR>
+nnoremap <buffer> grt :LspGotoTypeDef <CR>
+nnoremap <buffer> gW :LspSymbolSearch <CR>
+" Formatting
+nnoremap <buffer> <leader>lf :LspFormat <CR>
+nnoremap <buffer> <leader>lr :LspRename <CR>
+nnoremap <buffer> <leader>la :LspCodeAction <CR>
+nnoremap <buffer> <leader>lR :LspPeekReferences <CR>
+nnoremap <buffer> <leader>ld :LspGotoDefinition <CR>
+let g:which_key_map.l.f = '[F]ormat'
+let g:which_key_map.l.r = '[R]ename'
+let g:which_key_map.l.a = '[A]ction'
+let g:which_key_map.l.R = '[R]eferences'
+let g:which_key_map.l.d = '[D]efinition'
 
-
-  " Formatting
-  let g:lsp_format_sync_timeout = 1000
-  nnoremap <buffer> <leader>f <plug>(lsp-document-format)
-  let g:which_key_map.f = '[F]ormat buffer'
-endfunction
-
-augroup lsp_install
-  au!
-  " call s:on_lsp_buffer_enabled only for languages that has the server registered.
-  autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
-augroup END
+" ALE
+" Format on save
+let g:ale_fix_on_save = 1
