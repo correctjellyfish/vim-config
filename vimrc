@@ -165,6 +165,8 @@ Plug 'svermeulen/vim-yoink'
 Plug 'machakann/vim-highlightedyank'
 " Highlight trailing whitespace
 Plug 'ntpeters/vim-better-whitespace'
+" Autopair
+Plug 'tmsvg/pear-tree'
 
 " -----
 " Files
