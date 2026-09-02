@@ -55,24 +55,34 @@ nnoremap <leader>ww :StripWhitespace<CR>
 let g:which_key_map.w.w = 'Strip [W]hitespace'
 
 " Some git commands
-nnoremap <leader>gs :Git<CR>
-let g:which_key_map.g.s = { 'name' : '[S]tatus' }
+let g:gitgutter_map_keys = 0
+" Fugitive maps
+nnoremap <leader>gS :Git<CR>
 nnoremap <leader>gb :Git blame<CR>
-let g:which_key_map.g.b = { 'name' : '[B]lame' }
 nnoremap <leader>gd :Git difftool<CR>
-let g:which_key_map.g.d = { 'name' : '[D]iff' }
 nnoremap <leader>gm :Git mergetool<CR>
-let g:which_key_map.g.d = { 'name' : '[M]erge' }
 nnoremap <leader>ga :Gwrite<CR>
-let g:which_key_map.g.d = { 'name' : '[A]dd' }
+let g:which_key_map.g.b = { 'name' : '[B]lame' }
+let g:which_key_map.g.d = { 'name' : '[D]iff' }
+let g:which_key_map.g.m = { 'name' : '[M]erge' }
+let g:which_key_map.g.S = { 'name' : '[S]tatus' }
+let g:which_key_map.g.a = { 'name' : '[A]dd' }
+" Git gutter commands
+nnoremap <leader>gT :GitGutterToggle<CR>
+nnoremap <leader>gs :GitGutterStageHunk<CR>
+nnoremap <leader>gu :GitGutterUndoHunk<CR>
+nnoremap <leader>gp :GitGutterPreviewHunk<CR>
+nnoremap ]c :GitGutterNextHunk<CR>
+nnoremap [c :GitGutterPrevHunk<CR>
+let g:which_key_map.g.T={'name': '[T]oggle Gutter'}
+let g:which_key_map.g.s={'name': '[S]tage'}
+let g:which_key_map.g.u={'name': '[U]ndo'}
+let g:which_key_map.g.p={'name': '[P]review'}
+
 
 " Allow repeated indent/unindent
 vnoremap > >gv
 vnoremap < <gv
-
-" Allow editing macros
-nnoremap <leader>me  :<c-u><c-r><c-r>='let @'. v:register .' = '. string(getreg(v:register))<cr><c-f><left>
-let g:which_key_map.m.e = '[E]dit'
 
 " Quickly add blank lines
 nnoremap [<space>  :<c-u>put! =repeat(nr2char(10), v:count1)<cr>'[
