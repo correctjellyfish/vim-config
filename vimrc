@@ -145,8 +145,6 @@ Plug 'junegunn/fzf.vim'
 " q - Skip over
 " Q - remove current
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-" Autoinsert paired delimiter
-Plug 'Raimondi/delimitMate'
 " Undotree
 Plug 'mbbill/undotree'
 " Expand region
