@@ -232,16 +232,10 @@ Plug 'mhinz/vim-startify'
 " ---------
 " Enable LSP
 Plug 'yegappan/lsp'
-" Plug 'prabirshrestha/vim-lsp'
-" Install language servers and configure them for vim-lsp
-" Plug 'mattn/vim-lsp-settings'
 " Add ALE for diagnostics
 Plug 'dense-analysis/ale'
-" Autocompletion
-" Plug 'prabirshrestha/asyncomplete.vim'
-" Plug 'prabirshrestha/asyncomplete-lsp.vim'
 " Autoformatting
-" Plug 'vim-autoformat/vim-autoformat'
+Plug 'vim-autoformat/vim-autoformat'
 " Testing
 Plug 'vim-test/vim-test'
 " Debugging

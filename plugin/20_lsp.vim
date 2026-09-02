@@ -82,3 +82,6 @@ let g:which_key_map.l.d = '[D]efinition'
 " ALE
 " Format on save
 let g:ale_fix_on_save = 1
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines'],
+\}
