@@ -226,6 +226,8 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 " Start screen
 Plug 'mhinz/vim-startify'
+" Preview Markdown
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
 
 " ---------
 " Languages

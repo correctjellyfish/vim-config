@@ -44,6 +44,27 @@ if executable('rust-analyzer')
         \    syncInit: v:true
         \ })
 endif
+if executable('harper-ls')
+  call add(lspServers,#{
+        \    name: 'harper',
+        \    filetype: ['markdown', 'typst'],
+        \    path: exepath('harper-ls'),
+        \    args: ['--stdio'],
+        \    syncInit: v:true
+        \ })
+endif
+if executable('tinymist')
+  call add(lspServers,#{
+        \    name: 'tinymist',
+        \    filetype: ['typst'],
+        \    path: exepath('tinymist'),
+        \    args: [],
+        \    syncInit: v:true
+        \ })
+endif
+if executable('marksman')
+  call add(lspServers,#{ name: 'marksman', filetype: ['markdown'], path: exepath('marksman'), args: ['server'], syncInit: v:true })
+endif
 
 
 autocmd User LspSetup call LspAddServer(lspServers)
