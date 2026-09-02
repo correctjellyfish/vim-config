@@ -1,6 +1,3 @@
-" Autoformatting
-au BufWrite * :Autoformat
-
 " Configure completion
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
