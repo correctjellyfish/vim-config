@@ -67,21 +67,23 @@ nnoremap <buffer> grd :LspGotoDefinition <CR>
 nnoremap <buffer> grD :LspGotoDeclaration <CR>
 nnoremap <buffer> grt :LspGotoTypeDef <CR>
 nnoremap <buffer> gW :LspSymbolSearch <CR>
-" Formatting
+" Leader Maps
 nnoremap <buffer> <leader>lf :LspFormat <CR>
 nnoremap <buffer> <leader>lr :LspRename <CR>
 nnoremap <buffer> <leader>la :LspCodeAction <CR>
 nnoremap <buffer> <leader>lR :LspPeekReferences <CR>
 nnoremap <buffer> <leader>ld :LspGotoDefinition <CR>
+nnoremap <buffer> <leader>ls :LspDocumentSymbol <CR>
 let g:which_key_map.l.f = '[F]ormat'
 let g:which_key_map.l.r = '[R]ename'
 let g:which_key_map.l.a = '[A]ction'
 let g:which_key_map.l.R = '[R]eferences'
 let g:which_key_map.l.d = '[D]efinition'
+let g:which_key_map.l.s = '[S]ymbol'
 
 " ALE
 " Format on save
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
-\   '*': ['remove_trailing_lines'],
-\}
+      \   '*': ['remove_trailing_lines'],
+      \}
