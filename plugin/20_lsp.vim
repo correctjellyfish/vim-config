@@ -1,4 +1,4 @@
-let lspOpts = #{autoHighlightDiags: v:true}
+let lspOpts = #{autoHighlightDiags: v:true, aleSupport: v:true}
 autocmd User LspSetup call LspOptionsSet(lspOpts)
 
 let lspServers = []
@@ -16,6 +16,7 @@ if executable('ty')
         \   filetype: 'python',
         \   path: exepath('ty'),
         \   args: ['server'],
+        \   rootSearch: ['pyproject.toml', 'pixi.toml', '.venv/', '.git/'],
         \ })
 endif
 if executable('ruff')
@@ -24,6 +25,7 @@ if executable('ruff')
         \   filetype: 'python',
         \   path: exepath('ruff'),
         \   args: ['server'],
+        \   rootSearch: ['pyproject.toml', 'pixi.toml', '.venv/', '.git/'],
         \ })
 endif
 if executable('gopls')
