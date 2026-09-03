@@ -90,3 +90,11 @@ nnoremap ]<space>  :<c-u>put =repeat(nr2char(10), v:count1)<cr>
 
 " Enable next_s from sneak
 let g:sneak#s_next=1
+
+" Tag generation
+let g:gutentags_file_list_command = {
+      \ 'markers': {
+      \ '.git': 'git ls-files',
+      \ '.hg': 'hg files',
+      \ },
+      \ }
