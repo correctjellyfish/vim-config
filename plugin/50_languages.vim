@@ -8,3 +8,7 @@ set completeopt=menuone,noinsert,noselect,preview
 
 nnoremap <leader>tb :TagbarToggle<CR>
 let g:which_key_map.t.b = 'Tab [B]ar'
+
+" Markdown
+nnoremap <leader>lp :MarkdownPreview<CR>
+let g:which_key_map.l.p = 'Markdown [P]review'
