@@ -12,13 +12,13 @@ let g:which_key_map.s.k = '[S]earch [K]eymaps'
 nmap <leader>sf :Files<CR>
 let g:which_key_map.s.f = '[S]earch [F]iles'
 nmap <leader>sg :Rg<CR>
-let g:which_key_map.s.t = '[S]earch [T]ags'
-nmap <leader>sg :Tags<CR>
 let g:which_key_map.s.g = '[S]earch by [G]rep'
+nmap <leader>st :Tags<CR>
+let g:which_key_map.s.t = '[S]earch [T]ags'
 nmap <leader>s. :History<CR>
 let g:which_key_map.s['.'] = '[S]earch Recent Files ("." for repeat)'
-nmap <leader>bb :Buffers<CR>
-let g:which_key_map.b.b = 'Find existing [B]uffers'
+nmap <leader>sb :Buffers<CR>
+let g:which_key_map.s.b = 'Find existing [B]uffers'
 nmap <leader>/ :BLines<CR>
 let g:which_key_map['/'] = '[/] Fuzzily search in current buffer'
 
