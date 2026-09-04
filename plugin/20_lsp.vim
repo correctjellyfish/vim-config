@@ -62,6 +62,7 @@ if executable('tinymist')
         \    path: exepath('tinymist'),
         \    args: [],
         \    syncInit: v:true
+        \    rootSearch: ['.git/'],
         \ })
 endif
 if executable('marksman')
