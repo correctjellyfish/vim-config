@@ -61,7 +61,7 @@ if executable('tinymist')
         \    filetype: ['typst'],
         \    path: exepath('tinymist'),
         \    args: [],
-        \    syncInit: v:true
+        \    syncInit: v:true,
         \    rootSearch: ['.git/'],
         \ })
 endif
