@@ -242,7 +242,8 @@ Plug 'vim-autoformat/vim-autoformat'
 Plug 'vim-test/vim-test'
 " Debugging
 Plug 'puremourning/vimspector'
-
+" Typst
+Plug 'kaarmu/typst.vim'
 
 " --------
 " Terminal
