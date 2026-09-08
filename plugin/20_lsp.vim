@@ -75,29 +75,29 @@ autocmd User LspSetup call LspAddServer(lspServers)
 " Keybinds
 
 " These keybindings are default in Neovim
-nnoremap <buffer> [d :LspDiag prev <CR>
-nnoremap <buffer> ]d :LspDiag next <CR>
+nnoremap <buffer> [d :LspDiag prev<CR>
+nnoremap <buffer> ]d :LspDiag next<CR>
 " See `:help K` for why this keymap
-nnoremap <buffer> K :LspHover <CR>
-nnoremap <buffer> grn :LspRename <CR>
-nnoremap <buffer> gra :LspCodeAction <CR>
-nnoremap <buffer> grr :LspPeekReferences <CR>
-nnoremap <buffer> gri :LspGotoImpl <CR>
-nnoremap <buffer> gO :LspDocumentSymbol <CR>
-nnoremap <buffer> <C-s> :LspShowSignature <CR>
+nnoremap <buffer> K :LspHover<CR>
+nnoremap <buffer> grn :LspRename<CR>
+nnoremap <buffer> gra :LspCodeAction<CR>
+nnoremap <buffer> grr :LspPeekReferences<CR>
+nnoremap <buffer> gri :LspGotoImpl<CR>
+nnoremap <buffer> gO :LspDocumentSymbol<CR>
+nnoremap <buffer> <C-s> :LspShowSignature<CR>
 " Other useful functions
-nnoremap <buffer> grd :LspGotoDefinition <CR>
+nnoremap <buffer> grd :LspGotoDefinition<CR>
 " In C, this would take you to the header file
-nnoremap <buffer> grD :LspGotoDeclaration <CR>
-nnoremap <buffer> grt :LspGotoTypeDef <CR>
-nnoremap <buffer> gW :LspSymbolSearch <CR>
+nnoremap <buffer> grD :LspGotoDeclaration<CR>
+nnoremap <buffer> grt :LspGotoTypeDef<CR>
+nnoremap <buffer> gW :LspSymbolSearch<CR>
 " Leader Maps
-nnoremap <buffer> <leader>lf :LspFormat <CR>
-nnoremap <buffer> <leader>lr :LspRename <CR>
-nnoremap <buffer> <leader>la :LspCodeAction <CR>
-nnoremap <buffer> <leader>lR :LspPeekReferences <CR>
-nnoremap <buffer> <leader>ld :LspGotoDefinition <CR>
-nnoremap <buffer> <leader>ls :LspDocumentSymbol <CR>
+nnoremap <buffer> <leader>lf :LspFormat<CR>
+nnoremap <buffer> <leader>lr :LspRename<CR>
+nnoremap <buffer> <leader>la :LspCodeAction<CR>
+nnoremap <buffer> <leader>lR :LspPeekReferences<CR>
+nnoremap <buffer> <leader>ld :LspGotoDefinition<CR>
+nnoremap <buffer> <leader>ls :LspDocumentSymbol<CR>
 let g:which_key_map.l.f = '[F]ormat'
 let g:which_key_map.l.r = '[R]ename'
 let g:which_key_map.l.a = '[A]ction'
