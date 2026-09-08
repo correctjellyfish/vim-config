@@ -14,6 +14,7 @@ function! s:goyo_enter()
   set scrolloff=999
   Limelight
   colorscheme base16-grayscale-light
+  ALEDisable
 endfunction
 
 function! s:goyo_leave()
@@ -26,6 +27,7 @@ function! s:goyo_leave()
   set scrolloff=5
   Limelight!
   colorscheme catppuccin_mocha
+  ALEEnable
 endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
