@@ -75,29 +75,29 @@ autocmd User LspSetup call LspAddServer(lspServers)
 " Keybinds
 
 " These keybindings are default in Neovim
-nnoremap <buffer> [d :LspDiag prev<CR>
-nnoremap <buffer> ]d :LspDiag next<CR>
+nnoremap [d :LspDiag prev<CR>
+nnoremap ]d :LspDiag next<CR>
 " See `:help K` for why this keymap
-nnoremap <buffer> K :LspHover<CR>
-nnoremap <buffer> grn :LspRename<CR>
-nnoremap <buffer> gra :LspCodeAction<CR>
-nnoremap <buffer> grr :LspPeekReferences<CR>
-nnoremap <buffer> gri :LspGotoImpl<CR>
-nnoremap <buffer> gO :LspDocumentSymbol<CR>
-nnoremap <buffer> <C-s> :LspShowSignature<CR>
+nnoremap K :LspHover<CR>
+nnoremap grn :LspRename<CR>
+nnoremap gra :LspCodeAction<CR>
+nnoremap grr :LspPeekReferences<CR>
+nnoremap gri :LspGotoImpl<CR>
+nnoremap gO :LspDocumentSymbol<CR>
+nnoremap <C-s> :LspShowSignature<CR>
 " Other useful functions
-nnoremap <buffer> grd :LspGotoDefinition<CR>
+nnoremap grd :LspGotoDefinition<CR>
 " In C, this would take you to the header file
-nnoremap <buffer> grD :LspGotoDeclaration<CR>
-nnoremap <buffer> grt :LspGotoTypeDef<CR>
-nnoremap <buffer> gW :LspSymbolSearch<CR>
+nnoremap grD :LspGotoDeclaration<CR>
+nnoremap grt :LspGotoTypeDef<CR>
+nnoremap gW :LspSymbolSearch<CR>
 " Leader Maps
-nnoremap <buffer> <leader>lf :LspFormat<CR>
-nnoremap <buffer> <leader>lr :LspRename<CR>
-nnoremap <buffer> <leader>la :LspCodeAction<CR>
-nnoremap <buffer> <leader>lR :LspPeekReferences<CR>
-nnoremap <buffer> <leader>ld :LspGotoDefinition<CR>
-nnoremap <buffer> <leader>ls :LspDocumentSymbol<CR>
+nnoremap <leader>lf :LspFormat<CR>
+nnoremap <leader>lr :LspRename<CR>
+nnoremap <leader>la :LspCodeAction<CR>
+nnoremap <leader>lR :LspPeekReferences<CR>
+nnoremap <leader>ld :LspGotoDefinition<CR>
+nnoremap <leader>ls :LspDocumentSymbol<CR>
 let g:which_key_map.l.f = '[F]ormat'
 let g:which_key_map.l.r = '[R]ename'
 let g:which_key_map.l.a = '[A]ction'
@@ -108,6 +108,4 @@ let g:which_key_map.l.s = '[S]ymbol'
 " ALE
 " Format on save
 let g:ale_fix_on_save = 1
-let g:ale_fixers = {
-      \   '*': ['remove_trailing_lines'],
-      \}
+let g:ale_fixers = {  '*': ['remove_trailing_lines'], }
