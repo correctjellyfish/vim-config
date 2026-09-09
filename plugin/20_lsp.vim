@@ -96,7 +96,7 @@ nnoremap <leader>lf :LspFormat<CR>
 nnoremap <leader>lr :LspRename<CR>
 nnoremap <leader>la :LspCodeAction<CR>
 nnoremap <leader>lR :LspPeekReferences<CR>
-nnoremap <leader>ld :LspGotoDefinition<CR>
+nnoremap <leader>ld :LspPeekDefinition<CR>
 nnoremap <leader>ls :LspDocumentSymbol<CR>
 let g:which_key_map.l.f = '[F]ormat'
 let g:which_key_map.l.r = '[R]ename'
