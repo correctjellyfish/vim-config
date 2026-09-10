@@ -34,6 +34,7 @@ if executable('gopls')
         \    filetype: ['go', 'gomod'],
         \    path: exepath('gopls'),
         \    args: ['serve'],
+        \    rootSearch: ['go.mod'],
         \    syncInit: v:true
         \  })
 endif
@@ -42,6 +43,7 @@ if executable('rust-analyzer')
         \    name: 'rustlang',
         \    filetype: ['rust'],
         \    path: exepath('rust-analyzer'),
+        \    rootSearch: ['cargo.toml'],
         \    args: [],
         \    syncInit: v:true
         \ })
@@ -63,6 +65,16 @@ if executable('tinymist')
         \    args: [],
         \    syncInit: v:true,
         \    rootSearch: ['.git/'],
+        \ })
+endif
+if executable('zls')
+  call add(lspServers,#{
+        \    name: 'zls',
+        \    filetype: ['zig'],
+        \    path: exepath('zls'),
+        \    rootSearch: ['build.zig'],
+        \    args: [],
+        \    syncInit: v:true
         \ })
 endif
 if executable('marksman')
