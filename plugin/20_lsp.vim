@@ -1,4 +1,9 @@
-let lspOpts = #{autoHighlightDiags: v:true, aleSupport: v:true}
+let lspOpts = #{
+      \autoHighlightDiags: v:true,
+      \showDiagWithVirtualText: v:true,
+      \diagVirtualTextAlign: "after",
+      \diagVirtualTextWrap: "truncate"
+      \}
 autocmd User LspSetup call LspOptionsSet(lspOpts)
 
 let lspServers = []
@@ -109,15 +114,13 @@ nnoremap <leader>lr :LspRename<CR>
 nnoremap <leader>la :LspCodeAction<CR>
 nnoremap <leader>lR :LspPeekReferences<CR>
 nnoremap <leader>ld :LspPeekDefinition<CR>
+nnoremap <leader>lD :LspGotoDeclaration<CR>
 nnoremap <leader>ls :LspDocumentSymbol<CR>
+nnoremap <leader>lS :LspDiagCurrent<CR>
 let g:which_key_map.l.f = '[F]ormat'
 let g:which_key_map.l.r = '[R]ename'
 let g:which_key_map.l.a = '[A]ction'
 let g:which_key_map.l.R = '[R]eferences'
 let g:which_key_map.l.d = '[D]efinition'
+let g:which_key_map.l.D = '[D]eclaration'
 let g:which_key_map.l.s = '[S]ymbol'
-
-" ALE
-" Format on save
-let g:ale_fix_on_save = 1
-let g:ale_fixers = {  '*': ['remove_trailing_lines'], }

@@ -3,7 +3,6 @@
 let mapleader=' '
 let maplocalleader = ' '
 
-
 " [[ Setting Neovim default options ]]
 " These are some of the options enabled by default in Neovim
 " These are options believed by many Vim users to be essential.
@@ -29,6 +28,9 @@ let &t_EI = "\e[2 q"
 " Make line numbers default
 set number
 set relativenumber
+
+" Disable line wrapping
+set wrap!
 
 " Disable bells
 set noerrorbells
@@ -234,8 +236,6 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' 
 " ---------
 " Enable LSP
 Plug 'yegappan/lsp'
-" Add ALE for diagnostics
-Plug 'dense-analysis/ale'
 " Autoformatting
 Plug 'vim-autoformat/vim-autoformat'
 " Testing
