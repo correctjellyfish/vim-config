@@ -29,6 +29,12 @@ map F <Plug>Sneak_F
 map t <Plug>Sneak_t
 map T <Plug>Sneak_T
 
+" Quickfix
+nnoremap <leader>q :copen<CR>
+
+" Make
+nnoremap <leader>m :make<CR>
+
 " Configure vim-which-key
 let g:which_key_fallback_to_native_key=1
 call which_key#register('<Space>', "g:which_key_map")
@@ -51,3 +57,5 @@ let g:which_key_map.p = { 'name' : '[P]aste' }
 let g:which_key_map.w = { 'name' : '[W]riting/[W]hitespace' }
 let g:which_key_map.d = { 'name' : '[D]ebug' }
 let g:which_key_map.l = { 'name' : '[L]anguage'}
+let g:which_key_map.m = { 'name' : '[M]ake'}
+let g:which_key_map.q = { 'name' : '[Q]uickfix'}
