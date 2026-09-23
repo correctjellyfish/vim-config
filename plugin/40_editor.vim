@@ -57,7 +57,7 @@ let g:which_key_map.w.w = 'Strip [W]hitespace'
 " Some git commands
 let g:gitgutter_map_keys = 0
 " Fugitive maps
-nnoremap <leader>gS :Git<CR>
+nnoremap <leader>gg :Git<CR>
 nnoremap <leader>gb :Git blame<CR>
 nnoremap <leader>gd :Git difftool<CR>
 nnoremap <leader>gm :Git mergetool<CR>
@@ -65,15 +65,15 @@ nnoremap <leader>ga :Gwrite<CR>
 let g:which_key_map.g.b = { 'name' : '[B]lame' }
 let g:which_key_map.g.d = { 'name' : '[D]iff' }
 let g:which_key_map.g.m = { 'name' : '[M]erge' }
-let g:which_key_map.g.S = { 'name' : '[S]tatus' }
+let g:which_key_map.g.g = { 'name' : '[G]it interactive' }
 let g:which_key_map.g.a = { 'name' : '[A]dd' }
 " Git gutter commands
 nnoremap <leader>gT :GitGutterToggle<CR>
 nnoremap <leader>gs :GitGutterStageHunk<CR>
 nnoremap <leader>gu :GitGutterUndoHunk<CR>
 nnoremap <leader>gp :GitGutterPreviewHunk<CR>
-nnoremap ]c :GitGutterNextHunk<CR>
-nnoremap [c :GitGutterPrevHunk<CR>
+nmap ]h <Plug>(GitGutterNextHunk)
+nmap [h <Plug>(GitGutterPrevHunk)
 let g:which_key_map.g.T={'name': '[T]oggle Gutter'}
 let g:which_key_map.g.s={'name': '[S]tage'}
 let g:which_key_map.g.u={'name': '[U]ndo'}
