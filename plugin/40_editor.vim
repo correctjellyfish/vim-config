@@ -50,9 +50,6 @@ nmap <c-=> <plug>(YoinkPostPasteToggleFormat)
 nmap y <plug>(YoinkYankPreserveCursorPosition)
 xmap y <plug>(YoinkYankPreserveCursorPosition)
 
-" Strip whitespace
-nnoremap <leader>ww :StripWhitespace<CR>
-let g:which_key_map.w.w = 'Strip [W]hitespace'
 
 " Some git commands
 let g:gitgutter_map_keys = 0

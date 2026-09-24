@@ -35,6 +35,7 @@ nnoremap <leader>q :copen<CR>
 " Make
 nnoremap <leader>m :make<CR>
 
+
 " Configure vim-which-key
 let g:which_key_fallback_to_native_key=1
 call which_key#register('<Space>', "g:which_key_map")
@@ -45,17 +46,44 @@ nnoremap <silent> ] :<c-u>WhichKey  ']'<CR>
 nnoremap <silent> [ :<c-u>WhichKey  '['<CR>
 
 
-" Document existing key chains
+" Document Prefixes
 let g:which_key_map =  {}
-let g:which_key_map.s = { 'name' : '[S]earch' }
-let g:which_key_map.b = { 'name' : '[B]uffer' }
-let g:which_key_map.h = { 'name' : 'Git [H]unk' }
-let g:which_key_map.g = { 'name' : '[G]it (fugitive)' }
-let g:which_key_map.t = { 'name' : '[T]est/[T]ags' }
-let g:which_key_map.T = { 'name' : '[T]erminal' }
-let g:which_key_map.p = { 'name' : '[P]aste' }
-let g:which_key_map.w = { 'name' : '[W]riting/[W]hitespace' }
-let g:which_key_map.d = { 'name' : '[D]ebug' }
-let g:which_key_map.l = { 'name' : '[L]anguage'}
+let g:which_key_map.b = {
+      \ 'name' : '+[B]uffer',
+      \'d': ['bd', '[D]elete'],
+      \'b': 'Previous [B]uffer',
+      \'s': ['Buffer', '[S]earch'],
+      \}
+" Above doesn't work for this keymap for ~some~ reason
+nnoremap <leader>bb :b#<CR>
+let g:which_key_map.d = { 'name' : '+[D]ebug' }
+let g:which_key_map.g = { 'name' : '+[G]it (fugitive)' }
+let g:which_key_map.l = { 'name' : '+[L]anguage'}
 let g:which_key_map.m = { 'name' : '[M]ake'}
-let g:which_key_map.q = { 'name' : '[Q]uickfix'}
+let g:which_key_map.o = { 'name' : '+[O]ther' }
+let g:which_key_map.p = { 'name' : '+[P]aste' }
+let g:which_key_map.q = { 'name' : '+[Q]uickfix'}
+let g:which_key_map.s = { 'name' : '+[S]earch' }
+let g:which_key_map.t = { 'name' : '+[T]est/[T]ags' }
+let g:which_key_map.T = { 'name' : '+[T]erminal' }
+let g:which_key_map.u = { 'name' : '+[U]ndo-Tree' }
+let g:which_key_map['w'] = {
+      \ 'name' : '+[W]indows' ,
+      \ 'w' : ['<C-W>w'     , 'other-window']          ,
+      \ 'd' : ['<C-W>c'     , 'delete-window']         ,
+      \ '-' : ['<C-W>s'     , 'split-window-below']    ,
+      \ '|' : ['<C-W>v'     , 'split-window-right']    ,
+      \ '2' : ['<C-W>v'     , 'layout-double-columns'] ,
+      \ 'h' : ['<C-W>h'     , 'window-left']           ,
+      \ 'j' : ['<C-W>j'     , 'window-below']          ,
+      \ 'l' : ['<C-W>l'     , 'window-right']          ,
+      \ 'k' : ['<C-W>k'     , 'window-up']             ,
+      \ 'H' : ['<C-W>5<'    , 'expand-window-left']    ,
+      \ 'J' : [':resize +5'  , 'expand-window-below']   ,
+      \ 'L' : ['<C-W>5>'    , 'expand-window-right']   ,
+      \ 'K' : [':resize -5'  , 'expand-window-up']      ,
+      \ '=' : ['<C-W>='     , 'balance-window']        ,
+      \ 's' : ['<C-W>s'     , 'split-window-below']    ,
+      \ 'v' : ['<C-W>v'     , 'split-window-below']    ,
+      \ '?' : ['Windows'    , 'fzf-window']            ,
+      \ }

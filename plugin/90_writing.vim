@@ -1,8 +1,8 @@
 " Goyo setup
-nmap <silent> <leader>ws :Goyo<CR>
-nmap <silent> <leader>we :Goyo!<CR>
-let g:which_key_map.w.s = '[S]tart writing'
-let g:which_key_map.w.e = '[E]nd writing'
+nmap <silent> <leader>os :Goyo<CR>
+nmap <silent> <leader>oe :Goyo!<CR>
+let g:which_key_map.o.s = '[S]tart writing'
+let g:which_key_map.o.e = '[E]nd writing'
 " Run on entering Goyo
 function! s:goyo_enter()
   if executable('tmux') && strlen($TMUX)
