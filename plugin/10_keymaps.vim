@@ -63,7 +63,17 @@ let g:which_key_map.m = { 'name' : '[M]ake'}
 let g:which_key_map.o = { 'name' : '+[O]ther' }
 let g:which_key_map.p = { 'name' : '+[P]aste' }
 let g:which_key_map.q = { 'name' : '+[Q]uickfix'}
-let g:which_key_map.s = { 'name' : '+[S]earch' }
+let g:which_key_map['s'] = {
+      \ 'name' : '+[S]earch',
+      \ 'b':['Buffers', '[B]uffers'],
+      \ 'f':['Files', '[F]iles'],
+      \ 'g':['Rg', '[G]rep'],
+      \ 'h':['Helptags', '[H]elp'],
+      \ 'k':['Maps', '[K]eymaps'],
+      \ 't':['Tags', '[T]ags'],
+      \ '.':['History', 'Recent Files'],
+      \ '/': ['BLines', 'Current File'],
+      \}
 let g:which_key_map.t = { 'name' : '+[T]est/[T]ags' }
 let g:which_key_map.T = { 'name' : '+[T]erminal' }
 let g:which_key_map.u = { 'name' : '+[U]ndo-Tree' }
