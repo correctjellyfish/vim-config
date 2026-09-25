@@ -3,7 +3,7 @@
 " ### Tags ####
 " #############
 " Tag generation
-" Use vcs to list files to generate tags for 
+" Use vcs to list files to generate tags for
 let g:gutentags_file_list_command = {
       \ 'markers': {
       \ '.git': 'git ls-files',
