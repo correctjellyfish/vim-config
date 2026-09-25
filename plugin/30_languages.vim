@@ -1,3 +1,20 @@
+
+" #############
+" ### Tags ####
+" #############
+" Tag generation
+" Use vcs to list files to generate tags for 
+let g:gutentags_file_list_command = {
+      \ 'markers': {
+      \ '.git': 'git ls-files',
+      \ '.hg': 'hg files',
+      \ },
+      \ }
+let g:gutentags_ctags_exclude = ['.venv', '.pixi', '.tox']
+
+" ############
+" ### LSP ####
+" ############
 let lspOpts = #{
       \autoHighlightDiags: v:true,
       \showDiagWithVirtualText: v:true,
@@ -89,38 +106,12 @@ endif
 
 autocmd User LspSetup call LspAddServer(lspServers)
 
-" Keybinds
+" ###############
+" ### Format ####
+" ###############
+" Definition for mdformat
+let g:formatdef_mdformat = '"mdformat -"'
+let g:formatters_markdown = ['mdformat']
 
-" These keybindings are default in Neovim
-nnoremap [d :LspDiag prev<CR>
-nnoremap ]d :LspDiag next<CR>
-" See `:help K` for why this keymap
-nnoremap K :LspHover<CR>
-nnoremap grn :LspRename<CR>
-nnoremap gra :LspCodeAction<CR>
-nnoremap grr :LspPeekReferences<CR>
-nnoremap gri :LspGotoImpl<CR>
-nnoremap gO :LspDocumentSymbol<CR>
-nnoremap <C-s> :LspShowSignature<CR>
-" Other useful functions
-nnoremap grd :LspGotoDefinition<CR>
-" In C, this would take you to the header file
-nnoremap grD :LspGotoDeclaration<CR>
-nnoremap grt :LspGotoTypeDef<CR>
-nnoremap gW :LspSymbolSearch<CR>
-" Leader Maps
-nnoremap <leader>lf :LspFormat<CR>
-nnoremap <leader>lr :LspRename<CR>
-nnoremap <leader>la :LspCodeAction<CR>
-nnoremap <leader>lR :LspPeekReferences<CR>
-nnoremap <leader>ld :LspPeekDefinition<CR>
-nnoremap <leader>lD :LspGotoDeclaration<CR>
-nnoremap <leader>ls :LspDocumentSymbol<CR>
-nnoremap <leader>lS :LspDiagCurrent<CR>
-let g:which_key_map.l.f = '[F]ormat'
-let g:which_key_map.l.r = '[R]ename'
-let g:which_key_map.l.a = '[A]ction'
-let g:which_key_map.l.R = '[R]eferences'
-let g:which_key_map.l.d = '[D]efinition'
-let g:which_key_map.l.D = '[D]eclaration'
-let g:which_key_map.l.s = '[S]ymbol'
+let g:formatdef_typstyle = '"typstyle"'
+let g:formatters_typst = ['typstyle']
