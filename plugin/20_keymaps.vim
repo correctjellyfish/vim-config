@@ -179,7 +179,7 @@ let g:which_key_map.t = {
       \'name' : '+[T]est/[T]ags' ,
       \ 'b': ['TagbarToggle', 'Tag [B]ar'],
       \ 't': ['TestNearest', '[T]est Nearest'],
-      \ 'T': ['TestFile', '[T]est File'],
+      \ 'f': ['TestFile', 'Test [F]File'],
       \ 'a': ['TestSuite', 'Test [A]ll'],
       \ 'l': ['TestLast', 'Test [L]ast'],
       \ 'g': ['TestVisit', '[G]oto Last Test'],
