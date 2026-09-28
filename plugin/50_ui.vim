@@ -32,8 +32,9 @@ function! s:goyo_enter()
   set noshowcmd
   set scrolloff=999
   Limelight
+  " Disable autocompletion (still available with C-x C-o)
+  call LspOptionsSet({'autoComplete': v:false})
   colorscheme base16-grayscale-light
-  ALEDisable
 endfunction
 
 function! s:goyo_leave()
@@ -45,8 +46,9 @@ function! s:goyo_leave()
   set showcmd
   set scrolloff=5
   Limelight!
+  " Re-enable autocompletion
+  call LspOptionsSet({'autoComplete': v:true})
   colorscheme catppuccin_mocha
-  ALEEnable
 endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()

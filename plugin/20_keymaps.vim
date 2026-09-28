@@ -158,8 +158,7 @@ let g:which_key_map['l'] = {
 let g:which_key_map.m = [":make", '[M]ake']
 let g:which_key_map.o = {
       \'name' : '+[O]ther',
-      \'w' : ['Goyo', 'Start [W]riting'],
-      \'W' : ['Goyo!', 'Stop [W]riting'],
+      \'w' : ['Goyo', '[W]riting'],
       \'s' : ['StripWhitespace', '[S]trip Whitespace'],
       \}
 let g:which_key_map.p = { 'name' : '+[P]aste' }
