@@ -146,14 +146,15 @@ let g:which_key_map.g = {
       \}
 let g:which_key_map['l'] = {
       \ 'name': '+[L]anguage',
-      \ 'f': ['LspFormat','[F]ormat'],
-      \ 'r': ['LspRename','[R]ename'],
       \ 'a': ['LspCodeAction','[A]ction'],
-      \ 'R': ['LspPeekReferences','[R]eferences'],
       \ 'd': ['LspPeekDefinition','[D]efinition'],
       \ 'D': ['LspGotoDeclaration','[D]eclaration'],
-      \ 's': ['LspDocumentSymbol','[S]ymbol'],
+      \ 'f': ['LspFormat','[F]ormat'],
       \ 'p': ['MarkdownPreview','Markdown [P]review'],
+      \ 'r': ['LspRename','[R]ename'],
+      \ 'R': ['LspPeekReferences','[R]eferences'],
+      \ 's': ['LspDocumentSymbol','[S]ymbol'],
+      \ 'S': ['LspDiagCurrent', '[S]how Current Diagnostic']
       \}
 let g:which_key_map.m = [":make", '[M]ake']
 let g:which_key_map.o = {
@@ -178,7 +179,7 @@ let g:which_key_map.t = {
       \'name' : '+[T]est/[T]ags' ,
       \ 'b': ['TagbarToggle', 'Tag [B]ar'],
       \ 't': ['TestNearest', '[T]est Nearest'],
-      \ 'f': ['TestFile', 'Test [F]File'],
+      \ 'f': ['TestFile', 'Test [F]ile'],
       \ 'a': ['TestSuite', 'Test [A]ll'],
       \ 'l': ['TestLast', 'Test [L]ast'],
       \ 'g': ['TestVisit', '[G]oto Last Test'],
