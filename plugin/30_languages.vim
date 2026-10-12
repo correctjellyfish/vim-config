@@ -100,11 +100,17 @@ if executable('zls')
         \ })
 endif
 if executable('marksman')
-  call add(lspServers,#{ name: 'marksman', filetype: ['markdown'], path: exepath('marksman'), args: ['server'], syncInit: v:true })
+  call add(lspServers,#{
+        \name: 'marksman',
+        \filetype: ['markdown'],
+        \path: exepath('marksman'),
+        \args: ['server'],
+        \syncInit: v:true })
 endif
 
 
 autocmd User LspSetup call LspAddServer(lspServers)
+
 
 " ###############
 " ### Format ####

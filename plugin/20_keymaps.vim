@@ -42,7 +42,7 @@ nnoremap - :VimExplorer<CR>
 nnoremap [d :LspDiag prev<CR>
 nnoremap ]d :LspDiag next<CR>
 " See `:help K` for why this keymap
-nnoremap K :LspHover<CR>
+nnoremap K  <cmd>LspHover<cr>
 nnoremap grn :LspRename<CR>
 nnoremap gra :LspCodeAction<CR>
 nnoremap grr :LspPeekReferences<CR>

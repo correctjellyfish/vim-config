@@ -32,8 +32,9 @@ function! s:goyo_enter()
   set noshowcmd
   set scrolloff=999
   Limelight
-  " Disable autocompletion (still available with C-x C-o)
+  " Alter LSP options to be less distracting
   call LspOptionsSet({'autoComplete': v:false})
+  LspDiag highlight disable
   colorscheme base16-grayscale-light
 endfunction
 
@@ -48,6 +49,7 @@ function! s:goyo_leave()
   Limelight!
   " Re-enable autocompletion
   call LspOptionsSet({'autoComplete': v:true})
+  LspDiag highlight enable
   colorscheme catppuccin_mocha
 endfunction
 
