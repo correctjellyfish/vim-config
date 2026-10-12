@@ -132,6 +132,12 @@ let g:which_key_map.d = {
       \ 'p': ['<Plug>VimspectorJumpToPreviousBreakpoint','[P]revious Breakpoint'],
       \ 'i': ['<Plug>VimspectorBalloonEval','[I]nspect Value'],
       \}
+let g:which_key_map.f = {
+      \'name': '+[F]ile',
+      \ 't': ['NERDTree', '[T]ree'],
+      \ 's': ['update', '[S]ave'],
+      \ 'd': ['Dir getcwd()', '[D]irectory'],
+      \}
 let g:which_key_map.g = {
       \'name' : '+[G]it',
       \ 'g': ['Git','[G]it (fugitive)'],
