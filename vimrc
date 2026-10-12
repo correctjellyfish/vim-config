@@ -32,7 +32,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 " Add multiple cursors for easy editing
 " Keymaps
-" Ctrl-N - Select works
+" Ctrl-a - Select words
 " Ctrl-up/down - Create cursors vertically
 " Shift-Arrow - Select one character
 " n/N - Next/previous occurence
@@ -54,6 +54,7 @@ Plug 'terryma/vim-expand-region'
 Plug 'matze/vim-move'
 " Easy jumping to different locations on screen
 Plug 'justinmk/vim-sneak'
+Plug 'easymotion/vim-easymotion'
 " Better yank/paste
 Plug 'svermeulen/vim-yoink'
 " Highlight on yank
@@ -68,7 +69,7 @@ Plug 'tmsvg/pear-tree'
 " -----
 " File tree
 Plug 'preservim/nerdtree'
-" File Explorer 
+" File Explorer
 Plug 'Ashik80/VimExplorer'
 
 " --
