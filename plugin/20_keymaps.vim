@@ -34,8 +34,8 @@ nnoremap <C-t> :NERDTree<CR>
 nnoremap <S-h> :bprev<CR>
 nnoremap <S-l> :bnext<CR>
 
-" Vim-dir
-nnoremap - :Dir<CR>
+" File Explorer
+nnoremap - :VimExplorer<CR>
 
 " Lsp Keybinds
 " These keybindings are default in Neovim
@@ -136,7 +136,7 @@ let g:which_key_map.f = {
       \'name': '+[F]ile',
       \ 't': ['NERDTree', '[T]ree'],
       \ 's': ['update', '[S]ave'],
-      \ 'd': ['Dir getcwd()', '[D]irectory'],
+      \ 'd': ['VimExplorer', '[D]irectory'],
       \}
 let g:which_key_map.g = {
       \'name' : '+[G]it',
