@@ -63,6 +63,9 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'ntpeters/vim-better-whitespace'
 " Autopair
 Plug 'tmsvg/pear-tree'
+" Local configuration
+Plug 'LucHermitte/lh-vim-lib'
+Plug 'LucHermitte/local_vimrc'
 
 " -----
 " Files
